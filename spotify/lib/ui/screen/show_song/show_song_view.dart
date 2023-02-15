@@ -21,20 +21,22 @@ class ShowSongView extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () => controller.closeOverlay(),
-              child: SizedBox(
-                width: double.infinity,
-                height: double.infinity,
-                child: ListView.builder(
-                  padding: const EdgeInsets.all(20),
-                  itemCount: controller.song!.lyrics!.length,
-                  itemBuilder: (context, index) {
-                    List<String> lyrics = controller.song!.lyrics!;
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 4.0),
-                      child: Text(lyrics[index],
-                          style: TextStyle(fontSize: controller.lyricsFontSize.toDouble())),
-                    );
-                  },
+              child: Positioned(
+                child: SizedBox(
+                  width: double.infinity,
+                  height: double.infinity,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.all(20),
+                    itemCount: controller.song!.lyrics!.length,
+                    itemBuilder: (context, index) {
+                      List<String> lyrics = controller.song!.lyrics!;
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4.0),
+                        child: Text(lyrics[index],
+                            style: TextStyle(fontSize: controller.lyricsFontSize.toDouble())),
+                      );
+                    },
+                  ),
                 ),
               ),
             ),

@@ -69,6 +69,7 @@ class FilterListSongsOverlay extends StatelessWidget {
                         scrollController.animateTo(0,
                             duration: const Duration(milliseconds: 500),
                             curve: Curves.linear);
+                        controller.closeOverlay();
                       },
                       items: dropdownSortOptions,
                       hint: Text(controller.sortBy),
